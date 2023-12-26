@@ -1,0 +1,83 @@
+@import "../../style.scss";
+
+.leftbar {
+    @include themify($themes) {
+        flex: 2;
+        position: sticky;
+        top: 52px;
+        height: calc(100vh - 52px);
+        overflow: scroll;
+        margin: 0px -8px -12px -8px;
+        background-color: themed("bg");
+        color: themed("textColor");
+
+        @include mobile{
+            display: none;
+        }
+
+        @include tablet{
+        height: calc(100vh - 68px);
+            
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container {
+            padding: 20px;
+
+            .menu {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border: none;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+
+                    .icon {
+                        color: blue;
+                    }
+
+                    span {
+                        margin: 0px;
+                        font-size: 14px;
+                        color: themed("textColor");
+                    }
+                    img{
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+
+            hr {
+                margin: 15px 0px;
+                border: none;
+                height: 0.5px;
+                background-color: themed("border");
+            }
+
+            p {
+                color: themed("textColor");
+                font-size: 14px;
+            }
+        }
+    }
+}

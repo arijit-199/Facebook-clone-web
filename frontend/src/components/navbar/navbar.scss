@@ -1,0 +1,138 @@
+@import "../../style.scss";
+
+.navbar {
+    @include themify($themes) {
+        margin: -9px -8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2px 20px;
+        height: 48px;
+        border-bottom: 1px solid themed("border");
+        position: sticky;
+        top: 0;
+        background-color: themed("bg");
+        color: themed("textColor");
+        z-index: 999;
+
+        @include mobile {
+            margin: -9px -20px;
+        }
+
+        @include tablet {
+            padding: 2px 20px;
+            margin: -9px -18px;
+            gap: 0px;
+        }
+
+
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @include tablet {
+                gap: 15px;
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 18px;
+                color: themed("logo");
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                border: 1px solid themed("border");
+                padding: 3px 8px;
+                gap: 2px;
+                border-radius: 4px;
+
+                input {
+                    width: 300px;
+                    padding: 3px 5px;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    color: themed("textColor");
+
+                    @include mobile {
+                        display: none;
+                    }
+
+                    @include tablet {
+                        width: 230px;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @include mobile {
+                display: none;
+            }
+
+            @include tablet {
+                gap: 15px;
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                position: relative;
+                cursor: pointer;
+
+                @include tablet {
+                    display: none;
+                }
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    border: none;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                span {
+                    font-weight: 500;
+                }
+
+                .modal {
+                    position: absolute;
+                    top: 50px;
+                    right: 0px;
+                    background-color: white;
+                    padding: 27px 20px 27px 100px;
+                    border: none;
+                    z-index: 999;
+
+                    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 1);
+                    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 1);
+                    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 1);
+
+                    button{
+                        padding: 8px 16px;
+                        border: none;
+                        display: flex;
+                        justify-content: flex-end;
+                        background-color: red;
+                        color: white;
+                    }
+                }
+            }
+
+        }
+    }
+}
