@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(
     cors({
-        origin: "http://localhost:3000"
+        origin: "https://heroic-medovik-8f9d07.netlify.app"
     }));
 app.use(cookieParser());
 
